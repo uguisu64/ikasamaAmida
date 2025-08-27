@@ -17,12 +17,12 @@ function shuffle(a) {
  */
 export function generateAmida(count) {
     const lines = [];
-    const numRows = count * 2;
+    const numRows = count * 5;
     const availableRows = Array.from({ length: numRows }, (_, i) => i);
     shuffle(availableRows);
 
     // Add a random number of horizontal lines
-    const lineCount = Math.floor(count * 1.5) + 1;
+    const lineCount = Math.floor(count * 3) + 1;
 
     for (let i = 0; i < lineCount; i++) {
         if (availableRows.length === 0) break;
@@ -37,7 +37,7 @@ export function generateAmida(count) {
             ((line.left === left && line.right === right) || 
              (line.left === left - 1 && line.right === left) || 
              (line.left === right && line.right === right + 1)) &&
-            (Math.abs(line.y - row) < 2)
+            (Math.abs(line.y - row) === 0)
         );
 
         if (!isOccupied) {

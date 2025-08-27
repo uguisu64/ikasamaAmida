@@ -28,7 +28,7 @@
 		y2: height - paddingBottom
 	}));
 
-	const getHLineY = (y) => paddingTop + (amidaHeight / (numVerticals * 2 + 1)) * (y + 1);
+	const getHLineY = (y) => paddingTop + (amidaHeight / (numVerticals * 5 + 1)) * (y + 1);
 
 	const horizontalLines = lines.map((line) => ({
 		x1: verticalLines[line.left].x,
@@ -126,7 +126,7 @@
 		transition: fill 0.2s;
 	}
 	.participant-group rect {
-		transition: background-color: 0.2s;
+		transition: 0.2s;
 	}
 	.participant-group:hover rect {
 		background-color: hsla(217, 100%, 50%, 0.05);

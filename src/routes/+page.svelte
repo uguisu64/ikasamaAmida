@@ -51,7 +51,7 @@
 		const amidaHeight = height - paddingTop - paddingBottom;
 		const verticalSpacing = participantCount > 1 ? (width - paddingX * 2) / (participantCount - 1) : 0;
 		const verticalLinesX = Array.from({ length: participantCount }, (_, i) => paddingX + i * verticalSpacing);
-		const getHLineY = (y) => paddingTop + (amidaHeight / (participantCount * 2 + 1)) * (y + 1);
+		const getHLineY = (y) => paddingTop + (amidaHeight / (participantCount * 5 + 1)) * (y + 1);
 
 		for (let i = 0; i < participantCount; i++) {
 			let currentVLineIndex = i;
