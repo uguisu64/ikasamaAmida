@@ -221,8 +221,8 @@
 			<div class="placement-grid">
 				{#each { length: participantCount } as _, i}
 					<div class="placement-slot">
-						<label>位置 {i + 1}</label>
-						<select bind:value={placementOrder[i]}>
+						<label for={`placement-select-${i}`}>位置 {i + 1}</label>
+						<select id={`placement-select-${i}`} bind:value={placementOrder[i]}>
 							<option value={-1} disabled>選択してください</option>
 							{#each participants as name, pIndex}
 								<option value={pIndex}>

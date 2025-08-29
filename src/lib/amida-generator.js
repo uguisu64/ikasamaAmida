@@ -47,12 +47,17 @@ export function generateAmida(count) {
 
     // Calculate the final results based on the generated lines
     const sortedLines = lines.sort((a, b) => a.y - b.y);
-    const results = Array.from({ length: count }, (_, i) => i);
-
-    for (const line of sortedLines) {
-        const { left, right } = line;
-        [results[left], results[right]] = [results[right], results[left]];
-    }
+    const results = Array.from({ length: count }, (_, i) => {
+        let currentPosition = i;
+        for (const line of sortedLines) {
+            if (line.left === currentPosition) {
+                currentPosition = line.right;
+            } else if (line.right === currentPosition) {
+                currentPosition = line.left;
+            }
+        }
+        return currentPosition;
+    });
 
     return { lines: sortedLines, results };
 }
